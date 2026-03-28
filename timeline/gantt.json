@@ -1,0 +1,11 @@
+{
+  "modules": [
+    {"name":"Core Setup","status":"Complete","start":"Week 1","end":"Week 2"},
+    {"name":"Signal AI","status":"In Progress","start":"Week 2","end":"Week 5"},
+    {"name":"Growth Engine","status":"Not Started","start":"Week 4","end":"Week 6"},
+    {"name":"Promotion Engine","status":"Not Started","start":"Week 5","end":"Week 7"},
+    {"name":"Scaling Engine","status":"Not Started","start":"Week 6","end":"Week 8"},
+    {"name":"Blockchain Integration","status":"Not Started","start":"Week 7","end":"Week 8"},
+    {"name":"Full Testing","status":"Not Started","start":"Week 8","end":"Week 10"}
+  ]
+}
