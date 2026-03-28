@@ -1,24 +1,23 @@
-# Ignore everything except .gitkeep in main folders
-signals/*
-!signals/.gitkeep
-growth_engine/*
-!growth_engine/.gitkeep
-artifacts/*
-!artifacts/.gitkeep
+# Ignore everything by default
+*
 
-# Ignore system / large / sensitive files
-node_modules/
-.npm/
-.cache/
-.local/
-.termux/
-*.log
-*.csv
+# Except these folders
+!signals/
+!growth_engine/
+!artifacts/
+
+# Keep the folder placeholders
+signals/.gitkeep
+growth_engine/.gitkeep
+artifacts/.gitkeep
+
+# Ignore personal/system files
 *.mp4
 *.mp3
-*.webp
-*.psd
-*.jpg
-*.png
-wallet.data
-wallet*.data
+*.pdf
+downloads/
+.cache/
+.local/
+storage/
+npm/
+npmrc
