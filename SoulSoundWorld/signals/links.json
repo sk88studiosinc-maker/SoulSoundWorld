@@ -2,16 +2,123 @@
   {
     "label": "SoulSoundWorld Website",
     "type": "website",
-    "url": "https://www.soulsoundworld.world"
+    "platform": "web",
+    "url": "https://www.soulsoundworld.world",
+    "status": "active",
+    "priority": "high",
+    "useFor": ["bio", "promo", "main_hub"]
   },
   {
     "label": "Tomorrow's Yesterday Echo",
     "type": "story",
-    "url": "https://pocketfm.onelink.me/2IE7/edictfk9"
+    "platform": "Pocket FM",
+    "url": "https://pocketfm.onelink.me/2IE7/edictfk9",
+    "status": "active",
+    "priority": "high",
+    "useFor": ["story_promo", "traffic"]
   },
   {
-    "label": "Spotify Artist",
-    "type": "music",
-    "url": "https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl"
+    "label": "Joker for the Queen",
+    "type": "story",
+    "platform": "Pocket FM",
+    "url": "",
+    "status": "active",
+    "priority": "high",
+    "useFor": ["story_promo", "traffic"]
+import { getLinks, getAllSignals } from "./registry.js";
+import { printTodayActions, saveTodayActions } from "./actions.js";
+import { printCaptions, saveCaptions } from "./captions.js";
+
+const command = process.argv[2];
+
+function showHelp() {
+  console.log(`
+SoulSound Signal Engine
+
+Commands:
+  node growth_engine/index.js today
+  node growth_engine/index.js captions
+  node growth_engine/index.js links
+  node growth_engine/index.js signals
+  node growth_engine/index.js save:today
+  node growth_engine/index.js save:captions
+`);
+}
+
+function printLinks() {
+  const links = getLinks();
+
+  console.log("\nSoulSound Signal Engine — Links\n");
+
+  const groups = {
+    main_hub: [],
+    story_promo: [],
+    music_promo: [],
+    revenue: [],
+    other: []
+  };
+
+  links.forEach((link) => {
+    if (link.useFor?.includes("main_hub")) {
+      groups.main_hub.push(link);
+    } else if (link.useFor?.includes("story_promo")) {
+      groups.story_promo.push(link);
+    } else if (link.useFor?.includes("music_promo") || link.useFor?.includes("song_promo")) {
+      groups.music_promo.push(link);
+    } else if (
+      link.useFor?.includes("revenue") ||
+      link.useFor?.includes("tips") ||
+      link.useFor?.includes("affiliate") ||
+      link.useFor?.includes("store")
+    ) {
+      groups.revenue.push(link);
+    } else {
+      groups.other.push(link);
+    }
+  });
+
+  function printGroup(title, items) {
+    if (!items.length) return;
+    console.log(`== ${title} ==\n`);
+    items.forEach((link, index) => {
+      console.log(`${index + 1}. ${link.label}`);
+      console.log(`   Type: ${link.type} | Platform: ${link.platform}`);
+      console.log(`   URL: ${link.url}\n`);
+    });
   }
-]
+
+  printGroup("Main Hub", groups.main_hub);
+  printGroup("Story Promo", groups.story_promo);
+  printGroup("Music Promo", groups.music_promo);
+  printGroup("Revenue", groups.revenue);
+  printGroup("Other", groups.other);
+}
+
+switch (command) {
+  case "today":
+    printTodayActions();
+    break;
+
+  case "captions":
+    printCaptions();
+    break;
+
+  case "links":
+    printLinks();
+    break;
+
+  case "signals":
+    console.log(JSON.stringify(getAllSignals(), null, 2));
+    break;
+
+  case "save:today":
+    saveTodayActions();
+    break;
+
+  case "save:captions":
+    saveCaptions();
+    break;
+
+  default:
+    showHelp();
+}
