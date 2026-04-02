@@ -23,11 +23,48 @@ function printLinks() {
 
   console.log("\nSoulSound Signal Engine — Links\n");
 
-  links.forEach((link, index) => {
-    console.log(`${index + 1}. ${link.label}`);
-    console.log(`   Type: ${link.type} | Platform: ${link.platform}`);
-    console.log(`   URL: ${link.url}\n`);
+  const groups = {
+    main_hub: [],
+    story_promo: [],
+    music_promo: [],
+    revenue: [],
+    other: []
+  };
+
+  links.forEach((link) => {
+    if (link.useFor?.includes("main_hub")) {
+      groups.main_hub.push(link);
+    } else if (link.useFor?.includes("story_promo")) {
+      groups.story_promo.push(link);
+    } else if (link.useFor?.includes("music_promo") || link.useFor?.includes("song_promo")) {
+      groups.music_promo.push(link);
+    } else if (
+      link.useFor?.includes("revenue") ||
+      link.useFor?.includes("tips") ||
+      link.useFor?.includes("affiliate") ||
+      link.useFor?.includes("store")
+    ) {
+      groups.revenue.push(link);
+    } else {
+      groups.other.push(link);
+    }
   });
+
+  function printGroup(title, items) {
+    if (!items.length) return;
+    console.log(`== ${title} ==\n`);
+    items.forEach((link, index) => {
+      console.log(`${index + 1}. ${link.label}`);
+      console.log(`   Type: ${link.type} | Platform: ${link.platform}`);
+      console.log(`   URL: ${link.url}\n`);
+    });
+  }
+
+  printGroup("Main Hub", groups.main_hub);
+  printGroup("Story Promo", groups.story_promo);
+  printGroup("Music Promo", groups.music_promo);
+  printGroup("Revenue", groups.revenue);
+  printGroup("Other", groups.other);
 }
 
 switch (command) {
