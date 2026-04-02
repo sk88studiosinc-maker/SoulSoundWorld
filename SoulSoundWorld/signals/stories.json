@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Tomorrow's Yesterday Echo",
+    "platform": "Pocket FM",
+    "status": "active",
+    "chapter": "Chapter 1",
+    "link": "https://pocketfm.onelink.me/2IE7/edictfk9",
+    "promoStatus": "needs_push",
+    "priority": "high",
+    "notes": "Good hotspot clip candidate"
+  },
+  {
+    "title": "Joker for the Queen",
+    "platform": "Pocket FM",
+    "status": "active",
+    "chapter": "Season 1",
+    "link": "",
+    "promoStatus": "monitor",
+    "priority": "medium",
+    "notes": "Track season-end rollout and transitions"
+  }
+]
