@@ -1,0 +1,243 @@
+{
+  "site": {
+    "title": "SoulSound World",
+    "tagline": "Open build hub for Tomorrow's Yesterday and the Signal Archive",
+    "description": "A unified platform for music, storytelling, creative tools, and mythic coherence.",
+    "creator": "Samzin Kreave / SK88 Studios Inc",
+    "theme_color": "#07060b"
+  },
+  "hero": {
+    "title": "SoulSound World",
+    "subtitle": "Open Build Hub",
+    "tagline": "Where sound, story, and survival converge.",
+    "mission": "SoulSound exists at the intersection of music, narrative, and transformation. We create artifacts that help you stay coherent in an accelerating world.",
+    "cta_primary": "Explore the Build",
+    "cta_secondary": "Join the Signal",
+    "badges": [
+      "Music Platform",
+      "Story Universe",
+      "Creative Tools",
+      "Frequency Stacking RPG",
+      "Signal Archive"
+    ]
+  },
+  "sections": {
+    "open_build": {
+      "title": "Open Build",
+      "subtitle": "Live Development Log",
+      "description": "Watch the SoulSound ecosystem evolve in real-time. From narrative milestones to tool releases, every update is documented.",
+      "cta": "View Full Timeline"
+    },
+    "music_hub": {
+      "title": "Music Hub",
+      "subtitle": "Sounds & Frequencies",
+      "description": "Discover Samzin Kreave's music across platforms. Listen on Spotify, create on Suno, collaborate on BandLab.",
+      "platforms": [
+        {
+          "name": "Spotify",
+          "description": "Full artist catalog and playlists",
+          "url": "https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl",
+          "icon": "Music"
+        },
+        {
+          "name": "Suno",
+          "description": "AI-generated music forge and experiments",
+          "url": "https://suno.com/@soulsoundsamzin",
+          "icon": "Zap"
+        },
+        {
+          "name": "BandLab",
+          "description": "Collaborative music studio",
+          "url": "https://www.bandlab.com/sk88studiozinc",
+          "icon": "Users"
+        }
+      ]
+    },
+    "story_world": {
+      "title": "Story World",
+      "subtitle": "Narrative Universe",
+      "description": "Enter the living story universe. Tomorrow's Yesterday Echo and Joker for the Queen unfold across chapters and seasons.",
+      "stories": [
+        {
+          "title": "Tomorrow's Yesterday Echo",
+          "platform": "Pocket FM",
+          "status": "Active",
+          "chapters": "50+",
+          "description": "A narrative about presence, memory, and transformation.",
+          "url": "https://pocketfm.onelink.me/2IE7/edictfk9",
+          "priority": "high"
+        },
+        {
+          "title": "Joker for the Queen",
+          "platform": "Pocket FM",
+          "status": "Active",
+          "description": "A story of power, consequence, and choice.",
+          "url": "https://pocketfm.onelink.me/2IE7/edictfk9",
+          "priority": "medium"
+        }
+      ]
+    },
+    "expression_engine": {
+      "title": "Expression Engine",
+      "subtitle": "AI Caption & Content Generator",
+      "description": "Paste a music link. Get instant captions, hashtags, video concepts, and voiceover scripts.",
+      "features": [
+        "Music link analysis",
+        "AI-generated captions",
+        "Hashtag suggestions",
+        "Video concept generation",
+        "Voiceover script creation",
+        "Camera studio with filters"
+      ]
+    },
+    "revenue_accelerator": {
+      "title": "Revenue Accelerator",
+      "subtitle": "Growth & Monetization Dashboard",
+      "description": "Track your creative revenue across all platforms. Monitor health, identify opportunities, and scale strategically.",
+      "metrics": [
+        "Site health score",
+        "Revenue streams",
+        "Connected assets",
+        "Growth projections",
+        "Business adjustments"
+      ]
+    },
+    "frequency_stacking": {
+      "title": "Frequency Stacking",
+      "subtitle": "Cooperative Mythic Coherence Game",
+      "description": "A tabletop RPG about staying human in accelerating systems. 2-5 players, 60-180 minutes, no winning—only outcomes.",
+      "core_concepts": [
+        {
+          "name": "Coherence",
+          "symbol": "COH",
+          "description": "Emotional and identity stability"
+        },
+        {
+          "name": "Resonance",
+          "symbol": "RES",
+          "description": "Power to affect the world"
+        },
+        {
+          "name": "Presence",
+          "symbol": "PRE",
+          "description": "Awareness of what matters"
+        },
+        {
+          "name": "Integrity",
+          "symbol": "INT",
+          "description": "Resistance to corruption"
+        }
+      ],
+      "sections": [
+        "Rules & Overview",
+        "Classes & Archetypes",
+        "Cities & Worlds",
+        "Factions & Threats",
+        "Artifacts & Canon",
+        "Player Sheet",
+        "Quickstart Guide"
+      ]
+    },
+    "signal_records": {
+      "title": "Signal Records",
+      "subtitle": "Build Archive & Milestones",
+      "description": "A chronological record of the SoulSound ecosystem's evolution. Every milestone, every signal, documented.",
+      "cta": "Browse Timeline"
+    },
+    "the_depth": {
+      "title": "The Depth",
+      "subtitle": "Samzin Kreave — Signal Record",
+      "description": "Not a résumé. Not a pitch. A signal record of the artist, the human, and the witness.",
+      "sections": [
+        "The Human Timeline",
+        "The Artist Timeline",
+        "The Mythic Timeline",
+        "Why the Name Matters",
+        "Where the Lore Lives"
+      ]
+    },
+    "social_world": {
+      "title": "Social World",
+      "subtitle": "Platform Presence & Visibility",
+      "description": "The living signal layer. Follow, engage, and stay connected across all platforms.",
+      "platforms": [
+        {
+          "name": "Spotify",
+          "url": "https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl",
+          "type": "music"
+        },
+        {
+          "name": "Pocket FM",
+          "url": "https://pocketfm.onelink.me/2IE7/edictfk9",
+          "type": "story"
+        },
+        {
+          "name": "Zora",
+          "url": "https://zora.co/@soulsound_samzinkreave",
+          "type": "nft"
+        },
+        {
+          "name": "Base",
+          "url": "https://base.app/profile/soulsound",
+          "type": "web3"
+        }
+      ]
+    },
+    "vault": {
+      "title": "Vault",
+      "subtitle": "Artifacts & Canon Anchors",
+      "description": "Official SoulSound World artifacts, canon documentation, and lore anchors.",
+      "sections": [
+        "Artifacts",
+        "Canon Anchors",
+        "Lore Documentation"
+      ]
+    },
+    "support_tips": {
+      "title": "Support & Tips",
+      "subtitle": "Contribute & Connect",
+      "description": "Support the SoulSound ecosystem. Tips go directly to the creator.",
+      "methods": [
+        {
+          "name": "Base Wallet",
+          "address": "0x1942866814727812830Ce352154aB73A999b4cf9",
+          "type": "crypto",
+          "network": "Base"
+        },
+        {
+          "name": "Coinbase",
+          "url": "https://coinbase.com",
+          "type": "fiat"
+        },
+        {
+          "name": "Zora",
+          "url": "https://zora.co/@soulsound_samzinkreave",
+          "type": "nft"
+        },
+        {
+          "name": "Shopify Store",
+          "url": "https://soulsoundworldtech.myshopify.com/",
+          "type": "store"
+        }
+      ]
+    }
+  },
+  "external_links": {
+    "website": "https://www.soulsoundworld.world",
+    "spotify": "https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl",
+    "pocket_fm": "https://pocketfm.onelink.me/2IE7/edictfk9",
+    "shopify": "https://soulsoundworldtech.myshopify.com/",
+    "zora": "https://zora.co/@soulsound_samzinkreave",
+    "base_wallet": "0x1942866814727812830Ce352154aB73A999b4cf9",
+    "base_profile": "https://base.app/profile/soulsound",
+    "suno": "https://suno.com/@soulsoundsamzin",
+    "bandlab": "https://www.bandlab.com/sk88studiozinc"
+  },
+  "images": {
+    "hero_banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663562651074/DNMgy73g2vWzugSbLezBaw/hero-cosmic-ethereal-WNWByC9eyxrmbG7qccMLC6.webp",
+    "music_hub_banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663562651074/DNMgy73g2vWzugSbLezBaw/music-hub-banner-EEBCwZW75S4xhjvSDovVSz.webp",
+    "story_world_banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663562651074/DNMgy73g2vWzugSbLezBaw/story-world-banner-moXeXmAkwtKsYEtsiQ7YtC.webp",
+    "frequency_stacking_banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663562651074/DNMgy73g2vWzugSbLezBaw/frequency-stacking-banner-BQACytwYXwLsqZzggHGCxV.webp",
+    "artist_bio_banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663562651074/DNMgy73g2vWzugSbLezBaw/artist-bio-banner-MPeXc4XgH8T6o22tWb8BeZ.webp"
+  }
+}
