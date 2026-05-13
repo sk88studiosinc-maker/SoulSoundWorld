@@ -1,4 +1,3 @@
-cat > client/src/pages/SignalStudio.tsx <<'EOF'
 import {
   ArrowRight,
   CheckCircle2,
