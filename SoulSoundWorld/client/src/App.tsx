@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import FrequencyStacking from "./pages/FrequencyStacking";
 import TheDepth from "./pages/TheDepth";
+import SignalStudio from "./pages/SignalStudio";
 
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"\\"} component={Home} />
       <Route path={"/frequency-stacking"} component={FrequencyStacking} />
       <Route path={"/the-depth"} component={TheDepth} />
+      <Route path={"/signal-studio"} component={SignalStudio} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
