@@ -13,8 +13,7 @@ import SignalStudio from "./pages/SignalStudio";
 function Router() {
   return (
     <Switch>
-      <Route path={"\\"} component={Home} />
-      <Route path={"/frequency-stacking"} component={FrequencyStacking} />
+<Route path={"/"} component={Home} />
       <Route path={"/the-depth"} component={TheDepth} />
       <Route path={"/signal-studio"} component={SignalStudio} />
       <Route path={"/404"} component={NotFound} />
