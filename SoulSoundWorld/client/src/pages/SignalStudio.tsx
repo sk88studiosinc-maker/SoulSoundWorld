@@ -1,5 +1,23 @@
+import { ArrowRight, CheckCircle2, CreditCard, Mail, Mic2, Music, Radio, Send, Sparkles, Upload, Wand2, Waves } from "lucide-react";
 
-import { CreditCard, Mail, Mic2, Music, Radio, Send, Sparkles, Upload } from "lucide-react";
+const steps = [
+  {
+    title: "Record",
+    text: "Send a voice memo, hum, rough hook, lyrics, rhythm idea, or clear emotional direction.",
+  },
+  {
+    title: "Translate",
+    text: "We shape the signal into a production plan with sound, pacing, structure, and atmosphere.",
+  },
+  {
+    title: "Build",
+    text: "Your idea becomes a fuller record direction with instrumental, vocal, mix, and master prep.",
+  },
+  {
+    title: "Release",
+    text: "We prepare the sound and rollout assets for promo, performance, or streaming direction.",
+  },
+];
 
 const services = [
   {
@@ -22,121 +40,62 @@ const services = [
   },
 ];
 
+const deliverables = [
+  "Voice memo translation",
+  "Instrumental direction",
+  "Vocal enhancement guidance",
+  "Mix and master prep",
+  "Promo-ready short edits",
+  "Performance-ready versions",
+];
+
 export default function SignalStudio() {
   return (
-    <main className="min-h-screen overflow-hidden bg-black text-white">
-      <section className="px-6 py-24 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-300">
-            SoulSound Signal Studio
-          </p>
+    <main className="min-h-screen overflow-hidden bg-[#0A0A0A] text-[#F1F1F1]">
+      <div className="pointer-events-none fixed inset-0 opacity-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,245,255,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(192,38,211,0.18),transparent_36%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.05)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      </div>
 
-          <h1 className="max-w-4xl text-4xl font-black leading-tight md:text-6xl">
-            Turn unfinished ideas into finished records.
-          </h1>
+      <section className="relative px-6 py-24 md:px-12 lg:px-20">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">
+              SoulSound Signal Studio
+            </p>
 
-          <p className="mt-6 max-w-2xl text-lg text-white/75 md:text-xl">
-            Send us a voice memo, melody, rough vocal, lyrics, rhythm idea, or even just a hum.
-            We help translate your signal into professionally produced music, visuals, and rollout-ready content.
-          </p>
+            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl">
+              Voice Memo{" "}
+              <span className="bg-gradient-to-r from-cyan-200 via-fuchsia-300 to-purple-300 bg-clip-text text-transparent">
+                to Finished Record.
+              </span>
+            </h1>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#start"
-              className="rounded-full bg-cyan-300 px-6 py-3 font-bold text-black transition hover:bg-white"
-            >
-              Start Your Song
-            </a>
-            <a
-              href="#services"
-              className="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              View Services
-            </a>
-          </div>
-        </div>
-      </section>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
+              Your voice is the signal. We are the studio. Send a melody, rough vocal,
+              lyric, rhythm idea, or even just a hum — and we help translate it into
+              a premium record direction with human feeling and industry-ready polish.
+            </p>
 
-      <section id="services" className="px-6 py-16 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Service Tiers</h2>
-          <p className="mt-3 max-w-2xl text-white/65">
-            Built for artists, writers, performers, and creators who have the idea but need the finished sound.
-          </p>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {services.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a
+                href="#start"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-fuchsia-500 px-6 py-4 font-black text-black shadow-[0_0_35px_rgba(34,211,238,0.35)] transition hover:scale-[1.03]"
               >
-                <item.icon className="mb-5 h-8 w-8 text-cyan-300" />
-                <p className="text-sm uppercase tracking-[0.25em] text-purple-300">{item.label}</p>
-                <h3 className="mt-2 text-2xl font-bold">{item.title}</h3>
-                <p className="mt-4 text-white/65">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+                Start Transmitting
+                <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+              </a>
 
-      <section className="px-6 py-16 md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8">
-            <Mic2 className="mb-5 h-9 w-9 text-cyan-300" />
-            <h2 className="text-3xl font-bold">What You Can Send</h2>
-            <ul className="mt-6 space-y-3 text-white/70">
-              <li>Voice memos</li>
-              <li>Hums or melodies</li>
-              <li>Rough vocals</li>
-              <li>Lyrics or hooks</li>
-              <li>Beat references</li>
-              <li>Emotional direction</li>
-            </ul>
+              <a
+                href="#services"
+                className="rounded-2xl border border-fuchsia-400/40 bg-black/40 px-6 py-4 font-bold text-white backdrop-blur-xl transition hover:border-cyan-300 hover:bg-white/10"
+              >
+                View Signal Modules
+              </a>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8">
-            <Upload className="mb-5 h-9 w-9 text-purple-300" />
-            <h2 className="text-3xl font-bold">What We Deliver</h2>
-            <ul className="mt-6 space-y-3 text-white/70">
-              <li>Industry-style production direction</li>
-              <li>Vocal enhancement guidance</li>
-              <li>Mixing and mastering prep</li>
-              <li>Promo-ready short edits</li>
-              <li>Performance-ready versions</li>
-              <li>Visual rollout direction</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="start" className="px-6 py-20 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-cyan-300/20 bg-white/[0.04] p-8 text-center">
-          <CreditCard className="mx-auto mb-5 h-10 w-10 text-cyan-300" />
-          <h2 className="text-3xl font-black md:text-5xl">Start Your Signal</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-white/70">
-            The full checkout and upload portal is being activated. For now, send your idea directly and we will route you to the right package.
-          </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:soulsoundworld.live@gmail.com?subject=Signal Studio Submission"
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-black transition hover:bg-white"
-            >
-              <Send className="h-4 w-4" />
-              Submit by Email
-            </a>
-
-            <a
-              href="mailto:soulsoundworld.live@gmail.com?subject=Signal Studio Payment Options"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-            >
-              <Mail className="h-4 w-4" />
-              Ask About Packages
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
+          <div className="relative mx-auto aspect-square w-full max-w-[420px]">
+            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-cyan-300/20 via-fuchsia-500/20 to-purple-600/20 blur-3xl" />
+            <div className="absolute inset-0 rounded-full border border-cyan-300/20 bg-black/40 shadow-[0_0_80px_rgba(34,211,238,0.18)] backdrop-blur-xl" />
+            <div className="absolute inset-10 rounded-full border border-fuchsia-400/20
