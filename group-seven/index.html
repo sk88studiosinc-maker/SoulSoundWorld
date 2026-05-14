@@ -7,6 +7,30 @@
   <title>Group Seven × SoulSoundWorld Official Check-In</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<!-- GROUP SEVEN ANTHEM -->
+<audio id="g7-anthem" loop preload="none">
+  <source src="./audio/g7-mic-drop.mp3" type="audio/mpeg">
+</audio>
+
+<button id="g7-audio-toggle" class="hidden fixed top-6 right-6 z-[10000] w-14 h-14 rounded-full border-2 border-cyan-400 bg-black/80 text-cyan-300 text-2xl items-center justify-center shadow-[0_0_25px_rgba(34,240,255,0.45)]">
+  ♪
+</button>
+
+<div id="g7-intro-overlay" class="fixed inset-0 bg-black/95 flex items-center justify-center z-[9999] transition-opacity duration-1000">
+  <div class="text-center">
+    <h1 class="text-6xl md:text-7xl font-black tracking-[0.2em] bg-gradient-to-r from-pink-500 to-cyan-400 bg-clip-text text-transparent">
+      GROUP SEVEN
+    </h1>
+
+    <p class="text-cyan-400 text-xl tracking-[0.4em] mt-3">
+      MI C DROP
+    </p>
+
+    <button id="enter-spine-btn" class="mt-12 px-12 py-6 border-4 border-pink-500 text-xl font-bold tracking-widest hover:bg-pink-500 hover:text-black transition-all">
+      ENTER THE SPINE
+    </button>
+  </div>
+</div>
   <style>
     :root {
       --cyan: #22f0ff;
