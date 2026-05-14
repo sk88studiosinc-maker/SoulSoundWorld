@@ -97,6 +97,17 @@
     .bar:nth-child(4) { animation-delay: 0.3s; }
     .bar:nth-child(5) { animation-delay: 0.4s; height: 55%; }
   </style>
+
+<style id="g7-anthem-fix-style">
+#g7-intro-overlay.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+#g7-audio-toggle.visible {
+  display: flex !important;
+}
+</style>
+
 </head>
 <body class="bg-black text-white hero-bg min-h-screen overflow-x-hidden">
 
@@ -345,5 +356,34 @@
       if (e.key === "Escape") closeModal();
     });
   </script>
+
+<script id="g7-anthem-fix-script">
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('g7-anthem');
+  const overlay = document.getElementById('g7-intro-overlay');
+  const enterBtn = document.getElementById('enter-spine-btn');
+  const toggleBtn = document.getElementById('g7-audio-toggle');
+
+  if (!audio || !overlay || !enterBtn || !toggleBtn) return;
+
+  enterBtn.addEventListener('click', async () => {
+    overlay.classList.add('hidden');
+    toggleBtn.classList.add('visible');
+    try {
+      audio.volume = 1;
+      audio.muted = false;
+      await audio.play();
+    } catch (e) {
+      console.log('Audio play blocked:', e);
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    toggleBtn.textContent = audio.muted ? '🔇' : '♪';
+  });
+});
+</script>
+
 </body>
 </html>
