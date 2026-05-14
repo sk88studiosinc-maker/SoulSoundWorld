@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Group Seven × SoulSoundWorld Official Check-In — Creator Roll Call. Tap in. Claim your signal.">
+  <title>Group Seven × SoulSoundWorld Official Check-In</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<!-- GROUP SEVEN ANTHEM -->
+<audio id="g7-anthem" loop preload="none">
+  <source src="./audio/g7-mic-drop.mp3" type="audio/mpeg">
+</audio>
+
+<button id="g7-audio-toggle" class="hidden fixed top-6 right-6 z-[10000] w-14 h-14 rounded-full border-2 border-cyan-400 bg-black/80 text-cyan-300 text-2xl items-center justify-center shadow-[0_0_25px_rgba(34,240,255,0.45)]">
+  ♪
+</button>
+
+<div id="g7-intro-overlay" class="fixed inset-0 bg-black/95 flex items-center justify-center z-[9999] transition-opacity duration-1000">
+  <div class="text-center">
+    <h1 class="text-6xl md:text-7xl font-black tracking-[0.2em] bg-gradient-to-r from-pink-500 to-cyan-400 bg-clip-text text-transparent">
+      GROUP SEVEN
+    </h1>
+
+    <p class="text-cyan-400 text-xl tracking-[0.4em] mt-3">
+      MI C DROP
+    </p>
+
+    <button id="enter-spine-btn" class="mt-12 px-12 py-6 border-4 border-pink-500 text-xl font-bold tracking-widest hover:bg-pink-500 hover:text-black transition-all">
+      ENTER THE SPINE
+    </button>
+  </div>
+</div>
+  <style>
+    :root {
+      --cyan: #22f0ff;
+      --purple: #c026d3;
+      --gold: #fbbf24;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #000 100%);
+    }
+    .neon-cyan { text-shadow: 0 0 30px var(--cyan); }
+    .neon-purple { text-shadow: 0 0 30px var(--purple); }
+    .neon-gold { text-shadow: 0 0 25px var(--gold); }
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .input-field {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+    }
+    .input-field:focus {
+      border-color: #22f0ff;
+      box-shadow: 0 0 0 4px rgba(34,240,255,0.15);
+    }
+    .pulse {
+      animation: pulse 3s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(34, 240, 255, 0.6);
+      animation: floatParticle 25s linear infinite;
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0.3; }
+      100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+    }
+    .visualizer {
+      display: flex;
+      gap: 4px;
+      height: 48px;
+      align-items: flex-end;
+    }
+    .bar {
+      width: 6px;
+      background: linear-gradient(#22f0ff, #c026d3);
+      animation: soundwave 1.2s infinite ease-in-out;
+    }
+    @keyframes soundwave {
+      0%, 100% { height: 20%; opacity: 0.65; }
+      50% { height: 100%; opacity: 1; }
+    }
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; height: 70%; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; height: 55%; }
+  </style>
+</head>
+<body class="bg-black text-white hero-bg min-h-screen overflow-x-hidden">
+
+  <!-- Floating Particles -->
+  <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center relative">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h1 class="text-7xl md:text-8xl font-black tracking-tighter neon-cyan pulse">GROUP SEVEN</h1>
+      <p class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-yellow-300 bg-clip-text text-transparent mt-2 mb-8">
+        OFFICIAL CHECK-IN
+      </p>
+      
+      <p class="text-2xl md:text-3xl max-w-3xl mx-auto mb-12 text-gray-200">
+        Tap in. Claim your signal.<br>
+        <span class="text-cyan-400">You don’t run dry when you’re connected to the spine.</span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#rollcall" class="group px-12 py-6 bg-white text-black font-bold text-2xl rounded-3xl hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/50 flex items-center justify-center gap-3">
+          <span>Check In Now</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#signal" class="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-2xl rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+          Request Your Signal
+        </a>
+      </div>
+
+      <div class="mt-20 flex justify-center gap-8 text-sm uppercase tracking-widest">
+        <div class="flex items-center gap-2"><i class="fa-solid fa-layer-group"></i> BASE</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-link"></i> ZORA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATOR COUNTER -->
+  <div class="py-8 border-b border-white/10 text-center">
+    <p class="text-3xl font-bold text-cyan-400" id="counter">247</p>
+    <p class="text-sm uppercase tracking-widest">Creators Checked In</p>
+  </div>
+
+  <!-- ROLL CALL -->
+  <section id="rollcall" class="py-24 px-6 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-6xl font-bold text-center neon-purple mb-6">ROLL CALL</h2>
+      <p class="text-center text-gray-400 mb-12">Join the movement — Creators, Writers, Artists, Builders & Affiliates</p>
+
+      <form id="checkinForm" class="glass rounded-3xl p-8 md:p-12 space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm mb-2 text-gray-400">Creator Name</label>
+            <input type="text" id="name" required class="input-field w-full px-6 py-4 rounded-2xl">
+          </div>
+          <div>
+            <label class="block text-sm mb-2 text-gray-400">Email</label>
+            <input type="email" id="email" required class="input-field w-full px-6 py-4 rounded-2xl">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-400">Role</label>
+          <select id="role" required class="input-field w-full px-6 py-4 rounded-2xl">
+            <option value="">Select Role</option>
+            <option value="Creator">Creator</option>
+            <option value="Writer">Writer</option>
+            <option value="Songwriter">Songwriter</option>
+            <option value="Singer">Singer</option>
+            <option value="Artist">Artist</option>
+            <option value="Business">Business-Minded Builder</option>
+            <option value="Affiliate">Affiliate</option>
+            <option value="Collaborator">Collaborator</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm mb-2 text-gray-400">Wallet Address (Base/Zora)</label>
+            <input type="text" id="wallet" placeholder="0x..." class="input-field w-full px-6 py-4 rounded-2xl">
+          </div>
+          <div>
+            <label class="block text-sm mb-2 text-gray-400">Social Link</label>
+            <input type="text" id="social" placeholder="@username or link" class="input-field w-full px-6 py-4 rounded-2xl">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-400">What signal are you building?</label>
+          <textarea id="buildingSignal" rows="3" class="input-field w-full px-6 py-4 rounded-3xl"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-400">Where do you see yourself in 5 years?</label>
+          <textarea id="vision" rows="3" class="input-field w-full px-6 py-4 rounded-3xl"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-7 bg-gradient-to-r from-cyan-400 to-purple-500 hover:from-cyan-300 hover:to-purple-400 text-black font-bold text-2xl rounded-3xl transition-all duration-300 shadow-xl shadow-cyan-500/40">
+          SUBMIT TO THE SPINE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CLAIM KEY -->
+  <section class="py-20 px-6 bg-black/70">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl font-bold neon-gold mb-8">CLAIM KEY</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        Your Base or Zora wallet becomes part of your permanent creator signal key for drops, access, and collaboration tracking.
+      </p>
+      <button onclick="alert('Wallet connection coming soon — preparing the infrastructure.')" 
+        class="px-12 py-6 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-bold rounded-3xl text-xl transition-all">
+        Connect Wallet — Coming Next
+      </button>
+    </div>
+  </section>
+
+  <!-- REQUEST SIGNAL -->
+  <section id="signal" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl font-bold neon-cyan mb-8">REQUEST YOUR SIGNAL</h2>
+      <div class="glass rounded-3xl p-12">
+        <p class="text-xl text-gray-300 mb-8">Music • Visuals • Rollout • Web3 • Strategy • Collaboration</p>
+        <textarea id="request" rows="6" placeholder="Tell us what you need..." class="input-field w-full px-6 py-5 rounded-3xl"></textarea>
+        <button onclick="submitRequest()" class="mt-8 px-16 py-6 bg-white text-black font-bold rounded-3xl text-xl hover:scale-105 transition-all">
+          SEND REQUEST
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFILIATE COSIGN -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="glass rounded-3xl p-16">
+        <p class="text-3xl leading-relaxed">
+          Group Seven is not just a name.<br>
+          It’s a <span class="text-cyan-400">roll call</span>. A <span class="text-purple-400">cosign</span>.<br>
+          A <span class="neon-gold">creator spine</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative py-20 px-6 border-t border-white/10">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="visualizer mx-auto mb-8">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <h3 class="text-4xl font-bold mb-4">SoulSoundWorld × Group Seven</h3>
+      <p class="text-gray-400">Creator Signal Infrastructure • Base / Zora Ready</p>
+      <p class="text-sm text-gray-500 mt-8">© 2026 • Official Roll Call</p>
+
+      <button onclick="exportSubmissions()" class="mt-10 text-sm px-6 py-3 border border-gray-600 hover:border-cyan-400 rounded-2xl transition-colors">
+        📥 Export Check-ins (JSON)
+      </button>
+    </div>
+  </footer>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-50">
+    <div class="glass rounded-3xl p-12 max-w-md text-center">
+      <i class="fa-solid fa-check-circle text-7xl text-cyan-400 mb-6"></i>
+      <h3 class="text-4xl font-bold mb-4">Signal Received</h3>
+      <p class="text-2xl text-gray-200">Group Seven sees you.</p>
+      <button onclick="closeModal()" class="mt-12 px-12 py-5 bg-white text-black font-bold rounded-3xl text-xl">Back to the Spine</button>
+    </div>
+  </div>
+
+  <script>
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 40; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.width = p.style.height = Math.random() * 5 + 2 + 'px';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.animationDuration = (Math.random() * 20 + 20) + 's';
+        p.style.animationDelay = '-' + Math.random() * 30 + 's';
+        p.style.opacity = Math.random() * 0.6 + 0.2;
+        container.appendChild(p);
+      }
+    }
+
+    document.getElementById('checkinForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        role: document.getElementById('role').value,
+        wallet: document.getElementById('wallet').value,
+        social: document.getElementById('social').value,
+        buildingSignal: document.getElementById('buildingSignal').value,
+        vision: document.getElementById('vision').value,
+        timestamp: new Date().toISOString()
+      };
+      let submissions = JSON.parse(localStorage.getItem('groupSevenCheckins') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('groupSevenCheckins', JSON.stringify(submissions));
+      document.getElementById('successModal').classList.remove('hidden');
+      this.reset();
+      updateCounter();
+    });
+
+    function submitRequest() {
+      if (document.getElementById('request').value.trim()) {
+        alert("Signal received. Group Seven sees you.");
+        document.getElementById('request').value = '';
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    function exportSubmissions() {
+      const data = localStorage.getItem('groupSevenCheckins');
+      if (!data || data === '[]') {
+        alert("No submissions yet.");
+        return;
+      }
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `group-seven-checkins-${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+    }
+
+    function updateCounter() {
+      const submissions = JSON.parse(localStorage.getItem('groupSevenCheckins') || '[]');
+      document.getElementById('counter').textContent = 247 + submissions.length;
+    }
+
+    window.onload = () => {
+      createParticles();
+      updateCounter();
+    };
+
+    document.addEventListener('keydown', e => {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
