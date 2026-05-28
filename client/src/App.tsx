@@ -1,264 +1,433 @@
-cat > client/src/App.tsx <<'EOF'
-const tracks = [
-  { title: "CRY OF THE STORM", duration: "3:45" },
-  { title: "HEARTIST TRUTH", duration: "4:12" },
-  { title: "TO THE LIMIT", duration: "3:58" },
-  { title: "Over The Globe", duration: "4:05" },
-];
-
-const stats = [
-  { label: "Songs Released", value: "47" },
-  { label: "Story Chapters", value: "12" },
-  { label: "Artifacts Minted", value: "28" },
-  { label: "Modules Live", value: "7" },
-];
-
 function App() {
+  const tracks = [
+    { title: "CRY OF THE STORM", duration: "3:45" },
+    { title: "HEARTIST TRUTH", duration: "4:12" },
+    { title: "TO THE LIMIT", duration: "3:58" },
+    { title: "Over The Globe", duration: "4:05" },
+    { title: "I Know", duration: "3:32" },
+    { title: "Soul Ship", duration: "4:28" },
+  ];
+
+  const stories = [
+    {
+      label: "Story 1",
+      title: "IP Man",
+      description:
+        "A legendary martial artist's journey through honor, discipline, and transformation. Experience the untold stories behind the master.",
+    },
+    {
+      label: "Story 2",
+      title: "Joker for the Queen",
+      description:
+        "A thrilling tale of wit, deception, and unexpected alliances. Where every card played changes everything.",
+    },
+    {
+      label: "Story 3",
+      title: "Tomorrow's Yesterday",
+      description:
+        "A mind-bending narrative exploring time, destiny, and the choices that define us. What if you could rewrite your past?",
+    },
+  ];
+
+  const artifacts = [
+    "Signal Echo #1",
+    "Signal Echo #2",
+    "Signal Echo #3",
+    "Signal Echo #4",
+    "Signal Echo #5",
+    "Signal Echo #6",
+  ];
+
+  const spotifyArtistUrl =
+    "https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl";
+
   return (
-    <main style={{
-      minHeight: "100vh",
-      background: "radial-gradient(circle at 20% 0%, rgba(139,92,246,.22), transparent 34%), radial-gradient(circle at 80% 8%, rgba(34,211,238,.12), transparent 28%), linear-gradient(180deg,#050509 0%,#080711 45%,#020204 100%)",
-      color: "#fff",
-      fontFamily: "Inter, system-ui, sans-serif",
-      overflowX: "hidden"
-    }}>
-      <header style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
-        padding: "18px 22px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        borderBottom: "1px solid rgba(255,255,255,.1)",
-        background: "rgba(0,0,0,.72)",
-        backdropFilter: "blur(18px)"
-      }}>
-        <strong style={{ letterSpacing: "3px", fontSize: 14 }}>SOULSOUNDWORLD</strong>
-        <nav style={{ display: "flex", gap: 16, fontSize: 13 }}>
-          <a href="#music" style={{ color: "#ddd" }}>Music</a>
-          <a href="#stories" style={{ color: "#ddd" }}>Stories</a>
-          <a href="#support" style={{ color: "#c084fc" }}>Support</a>
-        </nav>
+    <div
+      style={{
+        background:
+          "radial-gradient(circle at 20% 0%, rgba(152,67,255,0.16), transparent 30%), radial-gradient(circle at 80% 10%, rgba(255,140,66,0.14), transparent 24%), linear-gradient(180deg, #05050a 0%, #070714 35%, #04040a 100%)",
+        color: "#f7f2ff",
+        minHeight: "100vh",
+        fontFamily:
+          'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      }}
+    >
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 20,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "22px 24px",
+          backdropFilter: "blur(16px)",
+          background: "rgba(4, 4, 10, 0.84)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "2rem",
+            fontWeight: 700,
+            letterSpacing: "-0.05em",
+            background:
+              "linear-gradient(90deg, #b56cff 0%, #ff74cf 55%, #ffc24d 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontFamily: 'Georgia, "Times New Roman", serif',
+          }}
+        >
+          SSW
+        </div>
+        <div style={{ fontSize: "1.8rem" }}>☰</div>
       </header>
 
-      <section style={{
-        minHeight: "92vh",
-        display: "grid",
-        placeItems: "center",
-        textAlign: "center",
-        padding: "64px 20px"
-      }}>
-        <div style={{ maxWidth: 880 }}>
-          <div style={{
-            display: "inline-flex",
-            gap: 8,
-            alignItems: "center",
-            border: "1px solid rgba(192,132,252,.35)",
-            borderRadius: 999,
-            padding: "8px 14px",
-            color: "#d8b4fe",
-            fontSize: 12,
-            letterSpacing: 2,
-            marginBottom: 24
-          }}>
-            ● SIGNAL LIVE
-          </div>
-
-          <h1 style={{
-            margin: 0,
-            fontSize: "clamp(3.7rem, 13vw, 7rem)",
-            lineHeight: .9,
-            letterSpacing: "-.08em",
-            fontWeight: 300
-          }}>
-            SoulSound<span style={{ color: "#a855f7" }}>World</span>
+      <section
+        style={{
+          minHeight: "88vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "48px 20px 32px",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ maxWidth: 720 }}>
+          <h1
+            style={{
+              margin: 0,
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontSize: "clamp(3.6rem, 10vw, 5.2rem)",
+              lineHeight: 0.96,
+              letterSpacing: "-0.06em",
+              background:
+                "linear-gradient(90deg, #ae74ff 0%, #ff71d4 55%, #ffc64b 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            SoulSoundWorld
           </h1>
-
-          <p style={{
-            margin: "26px auto 0",
-            maxWidth: 690,
-            fontSize: "clamp(1.25rem, 4vw, 2rem)",
-            lineHeight: 1.35,
-            color: "rgba(255,255,255,.82)"
-          }}>
-            A living transmedia ecosystem built from one Android phone.
-            Music. Fiction. Artifacts. One signal.
+          <p
+            style={{
+              margin: "26px auto 0",
+              maxWidth: 620,
+              fontSize: "1.18rem",
+              lineHeight: 1.6,
+              color: "rgba(255,255,255,0.86)",
+            }}
+          >
+            Where Sound, Story, and Signal Become One
           </p>
 
-          <p style={{
-            margin: "22px auto 0",
-            maxWidth: 580,
-            color: "rgba(255,255,255,.56)",
-            lineHeight: 1.7
-          }}>
-            Born in Termux at 3 a.m. Now broadcasting across music, fiction,
-            and digital worlds.
-          </p>
-
-          <div style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: 14,
-            marginTop: 34
-          }}>
-            <a href="#music" style={{
-              padding: "16px 24px",
-              borderRadius: 16,
-              background: "#fff",
-              color: "#000",
-              fontWeight: 800,
-              textDecoration: "none"
-            }}>
-              Listen to the Signal
-            </a>
-            <a href="#world" style={{
-              padding: "16px 24px",
-              borderRadius: 16,
-              border: "1px solid rgba(255,255,255,.22)",
-              color: "#fff",
-              fontWeight: 800,
-              textDecoration: "none"
-            }}>
+          <div
+            style={{
+              display: "grid",
+              gap: 16,
+              marginTop: 34,
+              maxWidth: 320,
+              marginInline: "auto",
+            }}
+          >
+            <button
+              style={{
+                border: "none",
+                borderRadius: 18,
+                padding: "18px 22px",
+                fontSize: "1.26rem",
+                fontWeight: 800,
+                color: "#fff",
+                background:
+                  "linear-gradient(90deg, #8f2fff 0%, #ff4ea7 52%, #ffbb21 100%)",
+              }}
+            >
               Enter the World
-            </a>
+            </button>
+            <button
+              style={{
+                borderRadius: 18,
+                padding: "18px 22px",
+                fontSize: "1.2rem",
+                fontWeight: 800,
+                color: "#fff",
+                background: "rgba(10,10,18,0.24)",
+                border: "1px solid rgba(255,255,255,0.18)",
+              }}
+            >
+              Explore Music
+            </button>
+          </div>
+
+          <div
+            style={{
+              marginTop: 28,
+              color: "rgba(255,255,255,0.72)",
+              fontSize: "1rem",
+            }}
+          >
+            Scroll to explore
           </div>
         </div>
       </section>
 
-      <section id="world" style={{ padding: "90px 22px", borderTop: "1px solid rgba(255,255,255,.1)" }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(2.4rem, 8vw, 4rem)", lineHeight: 1, margin: 0, fontWeight: 300 }}>
-            One Frequency. Many Realities.
+      <section style={{ padding: "56px 20px 16px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto 28px", textAlign: "center" }}>
+          <h2
+            style={{
+              margin: 0,
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontSize: "clamp(2rem, 6.5vw, 3.1rem)",
+            }}
+          >
+            <span style={{ color: "#ffbf30", marginRight: 12 }}>♫</span>
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg, #b065ff 0%, #ff74ce 56%, #ffca57 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Music
+            </span>
           </h2>
-          <p style={{ marginTop: 22, color: "rgba(255,255,255,.68)", fontSize: 19, lineHeight: 1.7 }}>
-            SoulSoundWorld is where songs, serialized fiction, lore artifacts,
-            and creator-built systems merge into one living world.
+          <p
+            style={{
+              margin: "18px auto 0",
+              maxWidth: 760,
+              color: "rgba(255,255,255,0.74)",
+              fontSize: "1.08rem",
+              lineHeight: 1.65,
+            }}
+          >
+            Discover the sonic universe of Samzin Kreave. Featured tracks from
+            SK88 Studios.
           </p>
         </div>
-      </section>
 
-      <section style={{ padding: "76px 22px", background: "rgba(0,0,0,.32)", borderTop: "1px solid rgba(255,255,255,.1)", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <p style={{ color: "#c084fc", letterSpacing: 3, fontSize: 12, margin: 0 }}>SIGNAL STATUS</p>
-          <h2 style={{ fontSize: "clamp(2.2rem, 7vw, 3.7rem)", margin: "12px 0 28px", fontWeight: 300 }}>
-            The World Is Alive
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16 }}>
-            {stats.map((stat) => (
-              <div key={stat.label} style={{
-                padding: 24,
-                borderRadius: 24,
-                background: "rgba(12,12,18,.88)",
-                border: "1px solid rgba(255,255,255,.1)"
-              }}>
-                <div style={{ fontSize: 42, color: "#c084fc", fontFamily: "monospace" }}>{stat.value}</div>
-                <div style={{ color: "rgba(255,255,255,.64)" }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ marginTop: 26, color: "rgba(255,255,255,.62)" }}>
-            Current Mission: tighten the public entry point, activate support flow, and prepare the next transmission.
-          </p>
-        </div>
-      </section>
-
-      <section id="music" style={{ padding: "90px 22px" }}>
-        <div style={{ maxWidth: 1050, margin: "0 auto", display: "grid", gap: 28 }}>
-          <h2 style={{ fontSize: "clamp(2.4rem, 8vw, 4rem)", margin: 0, fontWeight: 300 }}>
-            Enter Through Sound
-          </h2>
-          <p style={{ maxWidth: 620, color: "rgba(255,255,255,.68)", fontSize: 18, lineHeight: 1.7 }}>
-            The fastest way into the world is the music. Start with the signal,
-            then follow it into the stories.
-          </p>
-
-          <div style={{ display: "grid", gap: 14 }}>
-            {tracks.map((track) => (
-              <div key={track.title} style={{
+        <div style={{ display: "grid", gap: 20, maxWidth: 760, margin: "0 auto" }}>
+          {tracks.map((track) => (
+            <div
+              key={track.title}
+              style={{
                 display: "flex",
                 justifyContent: "space-between",
-                gap: 16,
-                padding: 22,
-                borderRadius: 22,
-                background: "rgba(255,255,255,.045)",
-                border: "1px solid rgba(255,255,255,.1)"
-              }}>
-                <strong>{track.title}</strong>
-                <span style={{ color: "#c084fc" }}>{track.duration}</span>
+                alignItems: "center",
+                minHeight: 120,
+                borderRadius: 24,
+                padding: "26px 24px",
+                background: "rgba(6, 8, 18, 0.92)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <div>
+                <div style={{ fontSize: "1.18rem", fontWeight: 800 }}>
+                  {track.title}
+                </div>
+                <div style={{ marginTop: 10, color: "rgba(255,255,255,0.6)" }}>
+                  {track.duration}
+                </div>
               </div>
-            ))}
-          </div>
+              <div style={{ fontSize: "1.8rem", color: "#ff42ba" }}>♫</div>
+            </div>
+          ))}
+        </div>
 
-          <a href="https://open.spotify.com/artist/3uugCAf5GNkNToPtdWGcQl" style={{ color: "#c084fc", fontWeight: 800 }}>
-            Open Spotify →
+        <div style={{ maxWidth: 760, margin: "34px auto 0", textAlign: "center" }}>
+          <p style={{ color: "rgba(255,255,255,0.72)", marginBottom: 18 }}>
+            Explore the full catalog on Spotify
+          </p>
+          <a
+            href={spotifyArtistUrl}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "inline-block",
+              minWidth: 220,
+              padding: "18px 24px",
+              borderRadius: 16,
+              textDecoration: "none",
+              fontWeight: 800,
+              fontSize: "1.2rem",
+              color: "#fff",
+              background: "#12b449",
+            }}
+          >
+            Listen on Spotify
           </a>
         </div>
       </section>
 
-      <section id="stories" style={{ padding: "90px 22px", borderTop: "1px solid rgba(255,255,255,.1)" }}>
-        <div style={{ maxWidth: 1050, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 18 }}>
-          {["Joker for the Queen", "Tomorrow’s Yesterday", "IP Man: The Love of a Billionaire’s Soul"].map((title) => (
-            <article key={title} style={{
-              padding: 26,
-              minHeight: 220,
-              borderRadius: 26,
-              background: "linear-gradient(135deg, rgba(168,85,247,.18), rgba(0,0,0,.5))",
-              border: "1px solid rgba(255,255,255,.1)"
-            }}>
-              <p style={{ color: "#c084fc", letterSpacing: 2, fontSize: 12 }}>STORY SIGNAL</p>
-              <h3 style={{ fontSize: 26, fontWeight: 400 }}>{title}</h3>
-              <p style={{ color: "rgba(255,255,255,.62)", lineHeight: 1.6 }}>
-                A doorway into the SoulSoundWorld narrative layer.
+      <section style={{ padding: "56px 20px 16px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto 28px", textAlign: "center" }}>
+          <h2
+            style={{
+              margin: 0,
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontSize: "clamp(2rem, 6.5vw, 3.1rem)",
+            }}
+          >
+            <span style={{ color: "#ffbf30", marginRight: 12 }}>📖</span>
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg, #b065ff 0%, #ff74ce 56%, #ffca57 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Stories
+            </span>
+          </h2>
+          <p
+            style={{
+              margin: "18px auto 0",
+              maxWidth: 760,
+              color: "rgba(255,255,255,0.74)",
+              fontSize: "1.08rem",
+              lineHeight: 1.65,
+            }}
+          >
+            Immersive narratives from Pocket FM. Stories that captivate,
+            inspire, and transport you to new worlds.
+          </p>
+        </div>
+
+        <div style={{ display: "grid", gap: 20, maxWidth: 760, margin: "0 auto" }}>
+          {stories.map((story) => (
+            <div
+              key={story.title}
+              style={{
+                borderRadius: 24,
+                padding: "28px 24px 24px",
+                background: "rgba(6, 8, 18, 0.92)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <div style={{ color: "#ffb21f", fontWeight: 700, marginBottom: 22 }}>
+                {story.label}
+              </div>
+              <h3
+                style={{
+                  margin: 0,
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  fontSize: "2.2rem",
+                  lineHeight: 1.05,
+                }}
+              >
+                {story.title}
+              </h3>
+              <p
+                style={{
+                  margin: "22px 0 0",
+                  color: "rgba(255,255,255,0.72)",
+                  fontSize: "1.08rem",
+                  lineHeight: 1.7,
+                }}
+              >
+                {story.description}
               </p>
-            </article>
+              <div
+                style={{
+                  marginTop: 28,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 12,
+                  minHeight: 58,
+                  borderRadius: 16,
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.015)",
+                  fontWeight: 800,
+                  fontSize: "1.1rem",
+                }}
+              >
+                Discover Story ↗
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      <section id="support" style={{ padding: "96px 22px", textAlign: "center", background: "linear-gradient(180deg, rgba(0,0,0,.1), rgba(168,85,247,.12))" }}>
-        <div style={{ maxWidth: 920, margin: "0 auto" }}>
-          <p style={{ color: "#c084fc", letterSpacing: 4, fontSize: 12 }}>ENTRY POINT</p>
-          <h2 style={{ fontSize: "clamp(2.4rem, 8vw, 4.6rem)", margin: "10px 0", fontWeight: 300 }}>
-            Founder Signal Pack
+      <section style={{ padding: "56px 20px 16px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto 26px", textAlign: "center" }}>
+          <h2
+            style={{
+              margin: 0,
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontSize: "clamp(2rem, 6.5vw, 3.1rem)",
+            }}
+          >
+            <span style={{ color: "#ffbf30", marginRight: 12 }}>✦</span>
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg, #b065ff 0%, #ff74ce 56%, #ffca57 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Signal Artifacts
+            </span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,.7)", fontSize: 18 }}>
-            Digital lore card. Early access. Supporter credit. A clean first step into the world.
+          <p
+            style={{
+              margin: "18px auto 0",
+              maxWidth: 760,
+              color: "rgba(255,255,255,0.74)",
+              fontSize: "1.08rem",
+              lineHeight: 1.65,
+            }}
+          >
+            Digital artifacts minted on Base chain via Zora. Exclusive drops
+            coming soon.
           </p>
+          <p style={{ marginTop: 18, color: "#a66dff" }}>
+            Powered by Zora Protocol on Base
+          </p>
+        </div>
 
-          <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 16 }}>
-            {[
-              ["$10", "Listener"],
-              ["$25", "Observer"],
-              ["$50", "Signal Bearer"],
-            ].map(([price, tier]) => (
-              <div key={tier} style={{
-                padding: 26,
+        <div style={{ display: "grid", gap: 22, maxWidth: 760, margin: "0 auto" }}>
+          {artifacts.map((artifact) => (
+            <div
+              key={artifact}
+              style={{
+                minHeight: 300,
                 borderRadius: 26,
-                background: "rgba(0,0,0,.45)",
-                border: "1px solid rgba(255,255,255,.12)"
-              }}>
-                <div style={{ fontSize: 42, fontFamily: "monospace" }}>{price}</div>
-                <h3>{tier}</h3>
-                <a href="#" style={{ color: "#c084fc", fontWeight: 800 }}>Claim Tier →</a>
+                padding: 1,
+                background:
+                  "linear-gradient(180deg, rgba(170,73,255,0.55), rgba(102,0,255,0.14))",
+              }}
+            >
+              <div
+                style={{
+                  minHeight: 298,
+                  borderRadius: 25,
+                  background:
+                    "radial-gradient(circle at 50% 20%, rgba(164, 65, 255, 0.15), transparent 35%), linear-gradient(180deg, rgba(28,10,43,0.92), rgba(19,8,34,0.94))",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  padding: "30px 20px",
+                }}
+              >
+                <div style={{ fontSize: "2.1rem", color: "#a15cff", marginBottom: 18 }}>
+                  ✦
+                </div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 800 }}>{artifact}</div>
+                <div style={{ marginTop: 10, color: "rgba(255,255,255,0.55)" }}>
+                  Coming Soon
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
-
-      <footer style={{ padding: "80px 22px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(2.2rem, 8vw, 4rem)", fontWeight: 300 }}>
-          The frequency is calling.
-        </h2>
-        <p style={{ color: "rgba(255,255,255,.58)" }}>Follow the Signal.</p>
-      </footer>
-    </main>
+    </div>
   );
 }
 
 export default App;
-EOF
