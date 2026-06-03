@@ -21,3 +21,5 @@ downloads/
 storage/
 npm/
 npmrc
+.vercel
+.env*.local
